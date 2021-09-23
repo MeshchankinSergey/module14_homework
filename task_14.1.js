@@ -19,3 +19,9 @@ function printsOwnProperty (student) {
 }
 
 printsOwnProperty (student)
+
+/* выведет в консоль
+name: Andrei
+surname: Ivanov
+age: 18
+position: developer*/
