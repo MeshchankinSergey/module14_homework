@@ -3,10 +3,13 @@ function ElectricalAppliances(){
     this. frequency = 50
 }
 
-ElectricalAppliances.prototype.electricPower = function(ampere){
-    let elPower = ampere * this.volt;
+ElectricalAppliances.prototype.electricPower = function(inOutlet, ampere){
+    let elPower = 0;
+    if (inOutlet === true){
+        elPower = ampere * this.volt;
+    }
     console.log(`This electric appliance power is ${elPower} watt!`)
-}
+} //функция принимает значение вкл(выкл) электроприбор в розетку и необходимая сила тока;
 
 function KitchenAppliances(name){
     this.location = 'kitchen',
@@ -26,8 +29,8 @@ BathroomAppliances.prototype = new ElectricalAppliances()
 
 const washingMachine = new BathroomAppliances ('washingMachine');
 
-oven.electricPower(6)
 console.log(oven)
+oven.electricPower(true, 6)
 
-washingMachine.electricPower(10)
 console.log(washingMachine)
+washingMachine.electricPower(false, 10)
